@@ -35,11 +35,11 @@ Next, install the following required packages
 
 After your project is created, you should organize your project folder as follows:
    - `public/`: A directory for static files.
-   - `public/home.html`: A basic HTML page.
-   - `public/home.css`: A CSS stylesheet for styling your home.html page.
-   - `public/me.png`: An image file showing yourself.
-   - `server.js`: A startup script to launch your web server.
+      - `public/home.html`: A basic HTML page.
+      - `public/home.css`: A CSS stylesheet for styling your home.html page.
+      - `public/me.png`: An image file showing yourself.   
    - `package.json`: This file contains your project configuration.
+   - `server.js`: A startup script to launch your web server.
 
      <img src="assn-imgs/img-4.png" width="150" alt="">
 
@@ -53,14 +53,13 @@ The server.js file should create a new web server with the following configurati
 
      <img src="assn-imgs/img-8.png" width="250" alt="">
 
-The server should be configured to recognize and serve to clients any file located in the `public/` directory:
+Each request to the server is handled using a request & response object. Together these should be used to give clients access to any file located in the `public/` directory:
 
-   - The URL property of the request object passed to the web server should be used to determine the file that is being targeted. This URL will need to be appended to the `public/` directory to be a valid path. For example:
+   - The request will tell you which file is being targeted using the `request.url` property. The URL should then be appended to the `public/` directory to form a valid path to a file. For example:
      - /me.png &rarr; /public/me.png
      - /images/logo.png &rarr; /public/images/logo.png
      - /js/script.js &rarr; /public/js/script.js
-   - You should then utilize the `fs` module to read files based on the path in the request.url property. This should open a file and serve the contents of the file in an HTTP response. 
-   - The response object passed to web server should be used to set both the status code of the response as well as the response body.
+   - The `fs` module can then be used to read the requested file and return the file contents in an HTTP response. 
       - If a file is found, the web server should return a status code of `200`.
       - If a file is **not** found, the web server should return a status code of `404`.
 
