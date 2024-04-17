@@ -88,7 +88,7 @@ To make your homepage more accessible, you should add further logic to the web s
 
 It is best to test your web server by including folders and files in the public/ directory and verifying that HTML, CSS, JS, and other files are loading correctly. 
 
-Download the following zip folder, which contains three test projects. Unzip the contents into your project and verify that the projects can be viewed with the following URLs:
+Unzip the contents of the projects.zip file into your `public/` folder. Then verify that the projects can be viewed with the following URLs:
 
 - `localhost:3000/project1/clock.html` - a project that displays a clock
 
@@ -104,9 +104,11 @@ Download the following zip folder, which contains three test projects. Unzip the
 
 Note: Your instructor will be using this same zip folder to test your web server. So it is imperative to do the same before submitting your work.
 
+Note: You should be looking for images, css files, or JavaScript files that are not loaded through the web server. For example, the `clock.html` page should have a ticking clock that updates every second!
+
 ## Helpful Hints
 - **Debugging:** It is highly recommended to use `nodemon` for active debugging during development; it refreshes your server automatically after changes. 
 - **Trace Statements:** While debugging, it can be useful to regularly print values out the console on the back-end. You can even use the `chalk` package to color the output and make it more visible! 
-- **File Paths:** Pay close attention to file paths when linking resources in HTML and CSS. All paths on the server should begin with a / forward-slash.
+- **File Paths:** Pay close attention to file paths when linking resources in HTML and CSS. All paths on the server should begin with a `/` forward-slash.
 
 Good luck, and have fun learning the inner workings of web servers with Node.js!
